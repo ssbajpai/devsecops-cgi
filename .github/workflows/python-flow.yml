@@ -13,6 +13,7 @@ jobs:
 
   Execute:
     runs-on: ubuntu-latest
+    needs: Build
     steps:
-      - name: Exectue Python File
+      - name: Run Python File
         run: python hello.py
