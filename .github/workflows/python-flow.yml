@@ -14,5 +14,5 @@ jobs:
   Execute:
     runs-on: ubuntu-latest
     steps:
-      -name: Exectue Python File
-       run: python hello.py
+      - name: Exectue Python File
+        run: python hello.py
