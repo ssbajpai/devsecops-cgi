@@ -10,9 +10,9 @@ jobs:
         run: echo "Building the Code"
       - name: Wait for the Code Building
         run: sleep 30
-        
+
   Execute:
     runs-on: ubuntu-latest
     steps:
       -name: Exectue Python File
-       run: python hello.py
+        run: python hello.py
