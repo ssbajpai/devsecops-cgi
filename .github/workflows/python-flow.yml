@@ -17,7 +17,11 @@ jobs:
         run: python -V
       - name: Identifying the Folder
         run: pwd
-      - name: List the files in the folder
-        run: ls
+      - name: List the files in current directory
+        run: ls ../devsecops-cgi
+      - name: List the files in the above directory
+        run: |
+          pwd
+          ls ../devsecops-cgi
       - name: Run Python File
         run: python hello.py
