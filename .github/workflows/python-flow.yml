@@ -8,12 +8,16 @@ jobs:
     steps:
       - name: Building the Code
         run: echo "Building the Code"
-      - name: Wait for the Code Building
-        run: sleep 30
 
   Execute:
     runs-on: ubuntu-latest
     needs: Build
     steps:
+      - name: Python Version
+        run: python -V
+      - name: Identifying the Folder
+        run: pwd
+      - name: List the files in the folder
+        run: ls
       - name: Run Python File
         run: python hello.py
