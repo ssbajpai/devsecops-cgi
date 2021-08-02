@@ -9,7 +9,7 @@ jobs:
       - name: Building the Code
         run: echo "Building the Code"
       - name: Wait for the Code Building
-	      run: sleep 30
+	run: sleep 30
   Execute:
     runs-on: ubuntu-latest
     steps:
