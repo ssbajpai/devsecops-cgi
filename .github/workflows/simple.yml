@@ -1,39 +1,26 @@
-name: Variables Workflow
-
-on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - "index.html"
-
-# on:
-#   push:
-#     branches:
-#       - main
-#     paths:
-#       # - "hello.java" # Only Hello.Java File ( Positive Pattern )
-#       # - "**.java" # Any Java File
-#       - "!index.html" # Except this file, any other file changes, trigger the Job ( Negative Pattern )
-
-
-# on:
-#   schedule:
-#     - cron: "0/5 * * * *"
-
-# on: [push]
-
+name: Conditional Jobs Workflow
+on: [push]
 jobs: 
-  run-github-actions: 
+  build: 
     runs-on: ubuntu-latest
     steps:
-      - name: List Files 
+      - name: Build Steps
         run: |
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
-          # git clone git@github:$GITHUB_REPOSITORY
-          # git checkout $GITHUB_SHA
+          echo "Build Job Getting Executed"
+          sleep 10
+  testing: 
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Testing Steps
+        run: |
+          echo "Testing Job Getting Executed"
+          sleep 10
+  deployment: 
+    runs-on: ubuntu-latest
+    needs: [build, testing]
+    steps:
+      - name: Deployment Steps
+        run: |
+          echo "Deployment Job Getting Executed"
+          sleep 10
