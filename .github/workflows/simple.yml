@@ -1,7 +1,7 @@
 name: Variables Workflow 
 on: 
-  Schedule:
-    - cron  "0/5 * * *"
+  schedule:
+    - cron:  "0/5 * * *"
 #on: [push]
 
 jobs: 
