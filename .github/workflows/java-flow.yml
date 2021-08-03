@@ -15,5 +15,7 @@ jobs:
         run: ls ${{github.workspace}}
       - name: compile the Java File
         run: javac hello.java
+      - name: List the files in current directory
+        run: ls ${{github.workspace}}
       - name: Run the Java File
-        run: java helloworld
+        run: java hello
