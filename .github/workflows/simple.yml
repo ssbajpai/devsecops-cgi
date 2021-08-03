@@ -4,7 +4,7 @@ on: push
 
 jobs:
   node-configuration:
-    runs-on: ubuntu-latest
+    runs-on: alpine
     steps:
       - name: Verify Weather Node is Installed or Not
         run: node --version
