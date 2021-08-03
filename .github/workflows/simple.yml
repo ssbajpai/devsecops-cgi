@@ -23,6 +23,3 @@ jobs:
       - name: Verify the Version and Install Pre-requisites
         run: |
           pip3 install --upgrade virtualenv
-          virutalenv env
-          source env/bin/activate
-          python --version
