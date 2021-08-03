@@ -1,8 +1,27 @@
-name: Variables Workflow 
-on: 
-  schedule:
-    - cron: "0/5 * * * *"
-#on: [push]
+name: Variables Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "index.html"
+
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       # - "hello.java" # Only Hello.Java File ( Positive Pattern )
+#       # - "**.java" # Any Java File
+#       - "!index.html" # Except this file, any other file changes, trigger the Job ( Negative Pattern )
+
+
+# on:
+#   schedule:
+#     - cron: "0/5 * * * *"
+
+# on: [push]
 
 jobs: 
   run-github-actions: 
