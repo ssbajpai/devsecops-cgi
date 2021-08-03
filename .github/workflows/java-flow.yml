@@ -1,4 +1,4 @@
-name: Python Workflow Demo
+name: Java Workflow Demo
 
 on: [push]
 
@@ -16,4 +16,4 @@ jobs:
       - name: Verify Java Compiled or Not
         run: ls ${{github.workspace}}
       - name: Execute the Java Code
-        run: java hello
+        run: java HelloWorld
