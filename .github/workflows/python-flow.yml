@@ -3,15 +3,17 @@ name: Python Workflow Demo
 on: [push]
 
 jobs:
-  Execute:
+  Build Java:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Python Version
-        run: python -V
-      - name: Identifying the Folder
-        run: pwd
       - name: List the files in current directory
         run: ls ${{github.workspace}}
-      - name: Run Python File
-        run: python ../devsecops-cgi/hello.py
+      - name: Verify the Java Version
+        run: java --version
+      - name: Compile the Java Program
+        run: javac hello.java
+      - name: Verify Java Compiled or Not
+        run: ls ${{github.workspace}}
+      - name: Execute the Java Code
+        run: java hello
