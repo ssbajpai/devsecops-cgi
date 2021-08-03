@@ -10,6 +10,7 @@ jobs:
           ls building.txt
   testing: 
     runs-on: ubuntu-latest
+    if: always()
     needs: build
     steps:
       - name: Testing Steps
@@ -18,6 +19,7 @@ jobs:
           sleep 10
   deployment: 
     runs-on: ubuntu-latest
+    if: always()
     needs: [build, testing]
     steps:
       - name: Deployment Steps
