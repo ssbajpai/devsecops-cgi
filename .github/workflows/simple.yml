@@ -1,6 +1,8 @@
 name: Variables Workflow 
-
-on: [push]
+on: 
+  Schedule:
+    - cron  "0/5 * * *"
+#on: [push]
 
 jobs: 
   run-github-actions: 
