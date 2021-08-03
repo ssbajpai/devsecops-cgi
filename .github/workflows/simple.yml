@@ -25,3 +25,4 @@ jobs:
           pip3 install --upgrade virtualenv
           virutalenv env
           source env/bin/activate
+          python --version
