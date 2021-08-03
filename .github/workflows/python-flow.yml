@@ -29,4 +29,4 @@ jobs:
       - name: Verify Java Compiled or Not
         run: ls ${{github.workspace}}
       - name: Execute the Java Code
-        run: java hello
+        run: java HelloWorld
