@@ -1,0 +1,7 @@
+name: Java Workflow Demo
+
+on: [push]
+jobs:
+  Execute:
+    runs-on: ubuntu-latest
+    steps:
