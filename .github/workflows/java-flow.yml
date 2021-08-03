@@ -1,18 +1,5 @@
-name: Java Workflow Demo
-
-on: [push]
-jobs:
-  compile:
-    runs-on: ubuntu-latest
-  Execute:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
-        run: python -V
-      - name: Identifying the Folder
-        run: pwd
-      - name: List the files in current directory
-        run: ls ${{github.workspace}}
-      - name: Run Python File
-        run: python ../devsecops-cgi/hello.py
+- name: Setup Java JDK
+    uses: actions/setup-java@v2.1.0
+    with:
+      java-version: 
+      distribution: 
