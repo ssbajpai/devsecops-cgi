@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - run: sudo scp -o StrictHostKeyChecking=no -v nishanth.html ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
+      - run: sudo scp -o StrictHostKeyChecking=no -v nishanth.html -P ${{secrets.PASSWORD}} ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/var/www/html/
 
       # - name: copy file via ssh password
       #   uses: appleboy/scp-action@master
