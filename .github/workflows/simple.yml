@@ -21,12 +21,12 @@ jobs:
       #     target: "/var/www/html/nishanth.html"
 
 
-        - name: Copy single file to remote
-          uses: garygrossgarten/github-action-scp@release
-          with:
-            local: ./nishanth.html
-            remote: /home/nishanth/
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            password: ${{ secrets.PASSWORD }}
+      - name: Copy single file to remote
+         uses: garygrossgarten/github-action-scp@release
+         with:
+          local: ./nishanth.html
+          remote: /home/nishanth/
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
 
