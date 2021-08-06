@@ -8,12 +8,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          source: "nishanth.html"
-          target: "/var/www/html/nishanth.html"
+      - run: sudo scp -o StrictHostKeyChecking=no -v nishanth.html ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
+
+      # - name: copy file via ssh password
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     source: "nishanth.html"
+      #     target: "/var/www/html/nishanth.html"
