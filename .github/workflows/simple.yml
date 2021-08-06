@@ -1,25 +1,19 @@
-name: Node.JS Installation
+name: HTML Page Deployment Installation
 
 on: push
 
 jobs:
-  node-configuration:
+  deployment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
         with:
-          node-version: "12"
-      - name: Verify Weather Node is Installed or Not
-        run: node --version
-  
-  python-configuration:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Configure Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.6'
-      
-      - name: Verify the Version and Install Pre-requisites
-        run: |
-          pip3 install --upgrade virtualenv
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "nishanth.html"
+          target: "/var/www/html/nishanth.html"
